@@ -1,0 +1,27 @@
+name: Feature request
+description: Explain a workflow you would like Zyler to support better.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: What are you trying to do?
+      description: Describe the task and where you get stuck.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would help?
+      description: Describe the behavior you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Current workaround or alternatives
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Optional. Use non-sensitive examples; this request is public.

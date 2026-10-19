@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Account, billing, or private support
+    url: https://github.com/ocai-labs/zyler/blob/main/SUPPORT.md
+    about: Keep account details out of public issues.
+  - name: Report a security vulnerability
+    url: https://github.com/ocai-labs/zyler/blob/main/SECURITY.md
+    about: Report vulnerabilities privately by email.
+  - name: Read the user guides
+    url: https://github.com/ocai-labs/zyler/blob/main/docs/README.md
+    about: Installation, local vaults, import/export, and the CLI.

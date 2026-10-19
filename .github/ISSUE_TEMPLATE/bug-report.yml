@@ -1,0 +1,52 @@
+name: Bug report
+description: Report something that does not work as expected in Zyler.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This report is public. Use sample notes and remove credentials, account details, and private content.
+        For account or billing questions, email support@oceanai.so. Report vulnerabilities privately using SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Zyler version
+      description: Find this in Settings → General.
+      placeholder: e.g. 0.16.1
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system and architecture
+      placeholder: e.g. macOS on Apple Silicon, Windows x64, or Linux distribution and x64
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use a small sample note or empty vault where possible.
+      placeholder: |
+        1. Open a vault
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include the exact error message, if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or other context
+      description: Optional. Review screenshots and logs for private information before attaching them. Do not upload your full vault.
