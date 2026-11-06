@@ -1,5 +1,8 @@
 # Product assets
 
+`screenshots/database-tour.gif` and `screenshots/database-board.png` come from the database
+promo video: a fictional launch plan shown as a table, a board and a calendar.
+
 `screenshots/project-planning.png` shows the Zyler desktop app with the fictional
 [reading-room example](../examples/project-planning/README.md). It contains sample
 notes rather than a personal vault.

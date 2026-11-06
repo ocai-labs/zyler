@@ -1,0 +1,42 @@
+name: Downloads badge
+
+# Counts installer downloads across every release and publishes the number as a
+# shields.io endpoint file on the `badges` branch. The README badge reads it.
+# Updater files (.yml, .blockmap, .zip) are left out, so one install is one download.
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Count installer downloads
+        id: count
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          total=$(gh api --paginate "repos/${GITHUB_REPOSITORY}/releases" \
+            --jq '[.[].assets[] | select(.name | test("[.](dmg|exe|AppImage)$")) | .download_count] | add // 0' \
+            | awk '{ sum += $1 } END { print sum + 0 }')
+          echo "total=${total}" >> "$GITHUB_OUTPUT"
+
+      - name: Publish the badge file
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TOTAL: ${{ steps.count.outputs.total }}
+        run: |
+          message=$(echo "${TOTAL}" | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
+          mkdir badge && cd badge
+          printf '{"schemaVersion":1,"label":"downloads","message":"%s","color":"blue"}\n' "${message}" > downloads.json
+          git init --quiet
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads.json
+          git commit --quiet -m "chore: update the downloads badge"
+          git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/badges

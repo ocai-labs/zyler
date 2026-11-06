@@ -6,6 +6,9 @@ New to Zyler? Start with [getting started](getting-started.md).
 | --- | --- |
 | [Installation](installation.md) | Choose the right installer and install the app |
 | [Getting started](getting-started.md) | Create a vault, write a note, and try a template |
+| [Coming from Notion](coming-from-notion.md) | See what carries over and move your pages |
+| [Databases](databases.md) | Use table, board, calendar, list, and gallery views, and row templates |
+| [Sync](sync.md) | Keep a vault the same on all your devices |
 | [Local vaults](local-vaults.md) | Understand your files and make a complete backup |
 | [Import and export](import-export.md) | Move content between Zyler and other tools |
 | [Command-line tool](cli.md) | Read, search, and create notes from a terminal |

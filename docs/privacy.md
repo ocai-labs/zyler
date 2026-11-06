@@ -13,18 +13,20 @@ just because they belong to Zyler. Your operating system, disk encryption, file
 permissions, backup tools, and any software you allow to read the folder determine
 who can access those files.
 
-## Built-in AI
+## AI
 
-Built-in AI uses a Zyler account and online services. When you ask AI to work with
-notes, relevant prompts and note content may be sent through Zyler's AI service to
-model providers to answer your request. Use these features only with content you
-are comfortable processing through the service.
+Zyler has no built-in AI, and the app sends no note content to an AI service. If you
+connect your own assistant through the [command-line tool](cli.md), that assistant can
+read and change the vault files you let it reach, and its provider handles what it
+reads under that provider's terms. Give it only the vaults and commands you trust it with.
 
 ## Sync
 
-Sync is an optional paid service associated with a Zyler account. Review its setup,
-device-pairing and recovery instructions in the app before enabling it. Check the app
-and website for current availability, pricing, and terms.
+Sync is an optional paid service associated with a Zyler account. Pages and attachments
+are encrypted on your device before they upload, so Zyler's server stores only encrypted
+data. Keep your recovery key: it is how you regain access when no paired device is at hand.
+See the [Sync guide](sync.md), and check the app and website for current plans, pricing,
+and terms.
 
 ## Support and public feedback
 
