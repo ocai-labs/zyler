@@ -95,3 +95,10 @@ Zyler's application source code is maintained privately.
 Documentation, template, and example improvements are welcome; see
 [contributing](CONTRIBUTING.md). App terms and privacy information are linked from the
 [Zyler website](https://zyler.app).
+
+
+## License
+
+The documentation, examples, and templates in this repository are available under the
+[MIT License](LICENSE). The license covers this repository only. It does not cover the Zyler
+application, and it does not grant rights to the Zyler name, icon, or branding.
