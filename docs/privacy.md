@@ -13,13 +13,6 @@ just because they belong to Zyler. Your operating system, disk encryption, file
 permissions, backup tools, and any software you allow to read the folder determine
 who can access those files.
 
-## AI
-
-Zyler has no built-in AI, and the app sends no note content to an AI service. If you
-connect your own assistant through the [command-line tool](cli.md), that assistant can
-read and change the vault files you let it reach, and its provider handles what it
-reads under that provider's terms. Give it only the vaults and commands you trust it with.
-
 ## Sync
 
 Sync is an optional paid service associated with a Zyler account. Pages and attachments
