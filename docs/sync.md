@@ -4,31 +4,18 @@ Sync is an optional subscription that keeps a vault the same on your iPhone, iPa
 Windows, and Linux devices. Zyler works fully without it, and you never need an account for
 local notes.
 
-## What it does
+## How it works
 
 - Pages and attachments are encrypted on your device before they upload. Zyler's server stores
   only encrypted data and cannot read your notes.
-- A vault can be paired with more than one device. Each new device is approved from a device
-  that is already paired.
-- Your recovery key is how you regain access when no paired device is at hand. Store it
-  somewhere safe and separate from the vault.
+- Each vault you sync is still a folder on every device. You keep writing offline, and changes
+  upload the next time the app is open with a connection.
+- A new device joins only when a device you already use approves it, or when you enter your
+  recovery key.
+- Your recovery key is the one thing that can unlock your notes when no connected device is at
+  hand. Zyler cannot recover it for you.
 
-## Plans
-
-| Plan | Storage | Devices | Largest attachment |
-| --- | --- | --- | --- |
-| Standard | 1 GB | up to 20 | 5 MB |
-| Plus | 10 GB | up to 20 | 200 MB |
-
-You can have as many vaults as you like. They share the storage of your plan. Prices and
-current terms are on the [pricing page](https://zyler.app/pricing). You can buy Sync on your
-Zyler account at [account.zyler.app](https://account.zyler.app), or inside the iPhone and iPad apps.
-
-## If a subscription ends
-
-Syncing stops when the paid period ends. For the next 30 days your devices can still download
-but not upload, and you can renew in that time. After that the copies in the cloud are deleted.
-The vault folders on your devices are never touched.
+To start, [turn on Sync](sync-set-up.md).
 
 ## Sync is not a backup
 
