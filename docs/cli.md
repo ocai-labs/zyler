@@ -1,74 +1,69 @@
 # The `zyler` command-line tool
 
-The desktop app includes a CLI for working with a local vault from a terminal or
-an external tool. The app does not need to be running. An external tool using the
-CLI gets the file access you give it; review its commands before allowing writes.
+The desktop app includes `zyler`, a command for reading and changing a local vault from a
+terminal, a script, or an AI assistant. The app does not need to be running. When it is,
+the app and the command share a write lock, so neither overwrites the other.
+
+An external tool using the CLI gets the file access you give it; review its commands before
+allowing writes.
 
 ## Install the command
 
-In Zyler, open **Settings → General → Command line tool** and click **Install**.
-Follow any permission prompt, then open a new terminal.
+In Zyler, open **Settings → General → Command line tool** and click **Install**. Follow any
+permission prompt, then open a new terminal and check it:
 
 ```sh
 zyler --version
-zyler --help
+```
+
+```text
+zyler 0.18.0
+commit  6e00cdf28e86, built 2026-11-03T11:43:29.938Z
+```
+
+## Choose a vault
+
+Most commands work on one vault. `zyler` uses the first of these it finds:
+
+1. `--vault "/path/to/My vault"` on the command line.
+2. The `ZYLER_VAULT` environment variable.
+3. The vault folder you are in, or any folder above it.
+
+The simplest way is to open a terminal in the vault folder:
+
+```sh
+cd "/path/to/My vault"
+zyler ls
+```
+
+To see the vaults the app has opened, most recent first:
+
+```sh
 zyler vaults
 ```
 
-`vaults` lists vaults the desktop app has opened. Create or open a vault in the app
-first. Use `--vault` to name the intended vault explicitly; quote paths containing spaces.
+`vaults` only lists them; name the one you mean with `--vault` or `cd`. Quote paths that
+contain spaces. On Windows, a path such as `"C:\Users\you\Documents\My vault"` works.
 
-## Read and search
+## Name a note
 
-Replace `/path/to/My vault` with your vault path. On Windows, a quoted path such as
-`"C:\Users\you\Documents\My vault"` works instead.
+Commands take a note by its id, such as `note_osk58obce0sd`, or by its whole title, such as
+`"Project plan"`. Reading commands also accept part of a title. If a name matches no note,
+or more than one, nothing happens and the command lists the matches so you can use an id:
 
-```sh
-zyler --vault "/path/to/My vault" ls
-zyler --vault "/path/to/My vault" search "project"
+```text
+"e" matches 2 notes. Use an id instead:
+  note_osk58obce0sd  Project plan
+  note_wow31iq9tdc7  Weekly review
 ```
 
-Copy a note id from the listing, then replace `<note-id>` below:
+## Get help
 
 ```sh
-zyler --vault "/path/to/My vault" cat <note-id>
+zyler --help              # every command
+zyler cat -h              # one command, short
+zyler cat --help          # one command, in full
+zyler help markdown       # the Markdown the CLI reads and writes
 ```
 
-`cat` prints the note as Markdown. In your shell, you can redirect that output to
-a `.md` file. Take care with `>`: the shell overwrites an existing destination file.
-
-## Create a note from Markdown
-
-From a local copy of this public repository:
-
-```sh
-zyler --vault "/path/to/My vault" new "Weekly review" --body "templates/weekly-review.md"
-```
-
-This creates a new note and prints its id. The Markdown file is an input file;
-subsequent edits in Zyler do not change it.
-
-## Editing and automation
-
-Use built-in help for the exact options supported by your installed version:
-
-```sh
-zyler cat --help
-zyler new --help
-zyler edit --help
-zyler write --help
-zyler doctor --help
-```
-
-For structured reads, add `--json`, for example:
-
-```sh
-zyler --vault "/path/to/My vault" --json ls
-```
-
-Read the current note and use the revision checks described in command help before
-automating edits. Keep a backup before running a batch of write commands. Use CLI
-content commands rather than rewriting `.zyler.json` files yourself.
-
-If the command is not found, reopen your terminal and check the install status in
-Settings → General. See [troubleshooting](troubleshooting.md) for more help.
+Next: [read and search](cli-read.md).

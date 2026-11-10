@@ -39,7 +39,13 @@ New to Zyler? Start with [getting started](getting-started.md).
 
 | Guide | What you will learn |
 | --- | --- |
-| [Command-line tool](cli.md) | Read, search, and create notes from a terminal |
+| [Install and choose a vault](cli.md) | Install `zyler`, pick a vault, and name notes |
+| [Read and search](cli-read.md) | List, search, and print notes and their blocks |
+| [Create and change notes](cli-notes.md) | Create, replace, rename, move, and delete notes |
+| [Edit inside a note](cli-blocks.md) | Find and replace, and insert, change, move, or delete blocks |
+| [Database rows](cli-database.md) | Set a row's properties from the terminal |
+| [Use with an AI assistant](cli-assistants.md) | Let Claude Code, Codex, or a script work on your notes |
+| [Doctor and exit codes](cli-troubleshooting.md) | Check the install and read what an exit code means |
 
 ## Help
 
