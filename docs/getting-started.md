@@ -24,6 +24,13 @@ and a table. Zyler saves edits to your vault as you work.
 Create another page for a related idea. Type `[[` to find and link a page in your vault.
 You can use tabs and split panes to keep related notes visible together.
 
+### Table of contents
+
+Type `/toc` and choose **Table of contents** to list the page's headings in a block.
+The list updates as you add, rename, or remove headings, and selecting an entry
+scrolls to that heading. Lower heading levels are indented under higher ones.
+A table of contents on a page with no headings stays empty until you add one.
+
 ## 4. Import a template
 
 1. Open the [weekly review template](../templates/weekly-review.md) on GitHub.
